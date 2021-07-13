@@ -21,22 +21,7 @@ We got great meetups coming up!
     <h2>Upcoming Meetups</h2>
     <ol>
     {% for meetup_item in meetups %}
-        <li class='meetup-item'>
-            <article>
-                <div class='meetup-summary'>
-                    <div class='meetup-image'>
-                        <img src='' alt=''>
-                    </div>
-                    <div class='meetup-details'>
-                        <h3>{{ meetup_item.title }}</h3>
-                        <address>{{ meetup_item.location }}</address>
-                    </div>
-                </div>
-                <div class='meetup-actions'>
-                    <a href="{% url 'meetup-detail' meetup_item.slug %}" class='btn'>More Details</a>
-                </div>
-            </article>
-        </li>
+        {% include 'meetups/includes/meetup-item.html' with title=meetup_item.title image=meetup_item.image.url location='New York' slug=meetup_item.slug %}
     {% endfor %}
     </ol>
 </section>
