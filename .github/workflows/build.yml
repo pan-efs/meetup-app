@@ -29,4 +29,3 @@ jobs:
     - name: Build and run docker
       run: |
         docker-compose build --remove-orphans
-        docker-compose up -d
